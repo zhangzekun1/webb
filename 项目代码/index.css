@@ -1,0 +1,663 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    font-family:"宋体";
+    height: 100%;
+    width: 100%;
+    background-image: url(image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+
+.customer1 > img {
+    content: url(image/customer1.png);
+}
+.customer2 > img {
+    content: url(image/customer2.png);
+}
+.customer3 > img {
+    content: url(image/customer3.png);
+}
+.customer4 > img {
+    content: url(image/customer4.png);
+}
+.customer5 > img {
+    content: url(image/customer5.png);
+}
+.customer6 > img {
+    content: url(image/customer6.png);
+}
+
+.head {
+    display: flex;
+    font-size: 0.8em;
+    padding-top: 2.5%;
+    justify-content: space-between;
+    width: 100%;
+}
+.time,.money {
+    color: #8C6900;
+    border: 0.4em solid #8C6900;
+    border-radius: 50px;
+    padding: 0.5em;
+    background: linear-gradient(to bottom,#FFE699 0%,#FFE699 50%,#FFD24D 51%,#FFD24D 100%);
+}
+/* 如果是电脑显示在做调整 */
+@media(min-width: 780px){
+    .time,.money {
+        border: 0.5em solid #8C6900;
+    }
+    .cookers {
+        border: 0.5em solid #FFFFFF;
+    }
+}
+.time {
+    width: 25%;
+    margin-left: 2.5%;
+    text-align: center;
+}
+.week {
+    padding-right: 1em;
+}
+.money {
+    width: 40%;
+    margin-right: 2.5%;
+    padding-right: 1em;
+    text-align: right;
+}
+
+------------------------------------------------------------------------------------------------
+
+.bodyone {
+    width: 100%;
+}   
+.cooks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;     /*将cookers水平均分为三块，1fr表示为一份*/
+    align-items: center;                    /*垂直方向居中对齐*/
+    justify-items: center;                  /*水平方向居中对齐*/
+    margin: 20px;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 25px;
+    height: 120px;                          /*当厨师数为0-3时，height为120px，4-6时为240px*/
+    background-color: #FFD24D;
+}
+@media(min-width: 780px){
+}
+/* 添加厨师 */
+.addcook img {
+    content: url(image/no-chef.png);
+}
+.addcook .cookingdish {
+    display: none;
+}
+/* 删除厨师 */
+.deletecook {
+    font-family: '微软雅黑';
+    position:absolute;
+    right: -20%;
+    top: -40%;
+    font-size: 3em;
+    font-weight: 700;
+    color: #CC9979;
+}
+/* 厨师图标内层的背景颜色 */
+.restcook {
+    background: linear-gradient(to right,#DDDDDD 0%,#DDDDDD 50%,#AAAAAA 51%,#AAAAAA 100%);
+}
+/* 厨师图标的图案 */
+.restcook img {
+    content: url(image/chef.png);
+}
+.restcook .cookingdish {
+    display: none;
+}
+.restcook .finish {
+    display: none;
+}
+/* 厨师在做的菜名显示 */
+.cookingdish {
+    font-size: 0.5em;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 18px;
+    left: -6%;
+    bottom: -25%;
+    border: 0.3em solid #FFFFFF;
+    border-radius: 2px;
+    background-color: #FF9122;
+}
+/* 工作中的厨师 */
+.workingcook {
+    background: linear-gradient(to right,#FF9122 0%,#FF9122 50%,#D96D00 51%,#D96D00 100%);
+}
+.workingcook img {
+    content: url(image/chef.png);
+}
+.workingcook .cookingdish {
+    display: block;
+}
+.workingcook .deletecook {
+    display: none;
+}
+.workingcook .finish {
+    display: none;
+}
+.finish {
+    position: absolute;
+    left: -30%;
+    bottom: -15%;
+    width: 100%;
+    height: 100%;
+    background-image: url(image/food.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.finishcook {
+    background: linear-gradient(to right,#AC91FF 1%,#AC91FF 50%,#7A4DFF 51%,#7A4DFF 100%);
+}
+.finishcook img {
+    content: url(image/chef.png);
+}
+.finishcook .cookingdish {
+    background-color: #AC91FF;
+    display: block;
+}
+.finishcook .deletecook {
+    display: none;
+}
+.finishcook .finish {
+    display: block;
+}
+
+------------------------------------------------------------------------------------------------
+
+.bodytwo {
+    width: 100%;
+}
+hr {
+    display: none;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    width: 90%;
+    border: 1px solid #FFFFFF;
+    height: 0;
+    background-color: #FFFFFF;
+}
+.customers {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;         /*将customers水平均分为两块，1fr表示为一份*/
+    grid-template-rows: 1fr 1fr ;           /*将customers垂直均分成两块，1fr表示为一份 */
+    /* align-items:;                    垂直方向居中对齐*/
+    /* justify-items: center;                  水平方向居中对齐 */
+    border: 0.4em solid #FFFFFF;
+    margin: 140px 20px 0 20px;              /*通过调节margin-top的值来确定位置，当有4-6个厨师时margin-top为0（既margin: 0 2.5% 0 2.5%;），否则为120px */
+    border-radius: 25px;
+    padding: 1em 0 1em 0;
+    height: 200px;                          
+    background-color: #FFA64D;
+}
+.charge {
+    display: none;
+    position: absolute;
+    left: -30%;
+    bottom: -20%;
+    width: 90%;
+    height: 90%;
+    background-image: url(image/money.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.explain {
+    display: none;
+    position: absolute;
+    left: -30%;
+    bottom: -20%;
+    width: 90%;
+    height: 90%;
+    background-image: url(image/heart.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+/* 为顾客区块的顾客统一添加外边距，设置布局 */
+.customers > div {
+    margin-left: 8%;
+}
+.emptytable {
+    background: linear-gradient(to right,#DDDDDD 0%,#DDDDDD 50%,#AAAAAA 51%,#AAAAAA 100%);
+}
+.emptytable .iconsize {
+    display: none;
+}
+.occupiedtable {
+    background: linear-gradient(to right,#FF2626 0%,#FF2626 50%,#B20000 51%,#B20000 100%);
+}
+.waitingcharge {
+    background: linear-gradient(to right,#80FF00 0%,#80FF00 50%,#00B200 51%,#00B200 100%);
+}
+.waitingexplain {
+    background: linear-gradient(to right,#661A00 0%,#661A00 50%,#401000 51%,#401000 100%);
+}
+.eatingtable {
+    background: linear-gradient(to right,#FF9122 0%,#FF9122 50%,#D96D00 51%,#D96D00 100%);
+}
+.customers div .foodname {
+    display: none;
+    position: absolute;
+    left: 85%;
+    width: 100%;
+    height: 18px;
+    border: 0.3em solid #FFFFFF;
+    border-radius: 2px;
+    font-size: 0.5em;
+    text-align: center; 
+}
+.color {
+    width: 0;
+    height: 100%;
+    border-radius: 2px;
+}
+.name {
+    width: 100%;
+    position: absolute;
+    top: 0.3em;
+    color: #FFFFFF;
+}
+.customers div .backgroundcolor {
+    /* display: none; */
+    position: absolute;
+    left: 85%;
+    width: 100%;
+    height: 18px;
+    padding: 0.3em;
+    border-radius: 2px;
+    font-size: 0.5em;
+    text-align: center;
+    color: #FFFFFF;
+}
+.one {
+    top: 0;
+}
+.two {
+    top: 35%;
+}
+.thr {
+    top: 70%;
+}
+.customers div .servefood {
+    display: none;
+    position: absolute;
+    left: 195%;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right,#FF2626 0%,#FF2626 50%,#B20000 51%,#B20000 100%);
+    border: 0.1em solid #FFFFFF;
+    border-radius: 50%;
+}
+.customers div .servefood img {
+    position: absolute;
+    left: -30%;
+    top: -30%;
+    width: 160%;
+}
+
+/* 背景颜色css */
+.green {
+    background-color: #00B200;
+}
+.red {
+    background-color: #FF2020;
+}
+.darkred {
+    background-color: #B20000;
+}
+.orange {
+    background-color: #FF9122;
+}
+.darkorange {
+    background-color: #D96D00;
+}
+.black {
+    background-color: #535362;
+}
+
+/* 图标的盒子div的的设置 */
+.charatericon {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 50%;
+}
+/* 最内层图案img的设置 */
+/* 休息厨师 */
+.iconsize-add {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+/* 其他人物 */
+.iconsize {
+    position: absolute;
+    left: -10%;
+    top: -10%;
+    width: 120%;
+    height: 120%;
+    border-radius: 50%;
+}
+
+/*------------------------------------------------------------------*/
+
+/* 等待区 */
+.waiting {
+    position: relative;
+    width: 100%;
+    height: 35%;
+    position: absolute;
+    right: -0.3em;
+    bottom: -26%;
+}
+.waiting > div {
+    position: absolute;
+    display: none;
+    background: linear-gradient(to right,#2693FF 1%,#2693FF 50%,#006DD9 51%,#006DD9 100%);
+}
+.wait {
+    position: absolute;
+    width: 100%;
+    height: 1em;
+    padding: 0.3em 0 0.3em 0;
+    left: -6%;
+    bottom: -0.5em;
+    border: 0.15em solid #FFFFFF;
+    border-radius: 2px;
+    background-color: #2693FF;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 0.7em;
+    font-weight: 700;
+}
+.waiting #one {
+    left: 75%;
+}
+.waiting #two {
+    left: 60%;
+}
+.waiting #three {
+    left: 45%;
+}
+.waiting #four {
+    left: 30%;
+}
+.waiting #five {
+    left: 15%;
+}
+.waiting #six {
+    left: 0;
+}
+
+
+/*------------------------------------------------------------------*/
+
+/* 遮罩层 */
+.shadow {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* 表单 */
+.form {
+    display: none;
+    position: absolute;
+    left: 3%;
+    top: 10%;
+    width: 92%;
+    height: 85%;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 25px;
+    background-color: #FFD24D;
+    color: #8C6600;
+}
+.form .charatericon {
+    background: linear-gradient(to right,#2693FF 1%,#2693FF 50%,#006DD9 51%,#006DD9 100%);
+}
+.form h4 {
+    text-align: right;
+    padding: 1em;
+    color: #513A00;
+}
+.form div {
+    position: absolute;
+    left: 4%;
+    top: -7%;
+}
+.menu {
+    margin: 0 5% 0 5%;
+    width: 80%;
+    height: 70%;
+    background-color: #FFFFFF;
+    border: 0.2em solid #CA9800;
+    border-radius: 2px;
+    padding-left: 2em;
+}
+.menu p {
+    padding: 1em 0 1em 0;
+}
+.menu input {
+    margin-left: 1em;
+}
+.menu span {
+    margin-left: 1em;
+    width: 80%;
+}
+.menu label {
+    margin-left: 1em;
+}
+.menu .yuan {
+    float: right;
+    margin-left: 0;
+    margin-right: 2em;
+}
+.tiaozheng {
+    padding-right: 0.5em;
+}
+.menu .submit {
+    margin-left: 0;
+    position: absolute;
+    left: 5%;
+    bottom: 3%;
+    width: 55%;
+    height: 10%;
+    border: 0.2em solid #8C6900;
+    border-radius: 50px;
+    background: linear-gradient(to bottom,#FFE699 0%,#FFE699 50%,#FFD24D 51%,#FFD24D 100%);
+    font-size: 1.2em;
+    color: #8C6600;
+}
+.exit {
+    position: absolute;
+    right: 5%;
+    bottom: 3%;
+    width: 30%;
+    height: 10%;
+    border: 0.2em solid #8C6900;
+    border-radius: 50px;
+    background: linear-gradient(to bottom,#FFE699 0%,#FFE699 50%,#FFD24D 51%,#FFD24D 100%);
+    font-size: 1.2em;
+    color: #8C6600;
+}
+
+
+/* 欢迎页面 */
+.welcome {
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width: 92%;
+    height: 35%;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 25px;
+    background-color: #FFD24D;
+    color: #8C6600;
+}
+.welcome h2 {
+    color: #513A00;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+.welcome p {
+    padding: 0.1em 0 0.1em 2em;
+}
+.welcome .shiqing {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em 1em 2em;
+}
+.button {
+    text-align: center;
+    padding-top: 0.5em;
+}
+.button .start {
+    padding: 0.6em 6em 0.6em 6em;
+}
+/* 按钮的统一样式 */
+.button button {
+    font-size: 1.2em;
+    color: #8C6600;
+    border: 0.15em solid #8C6901;
+    border-radius: 50px;
+    background: linear-gradient(to bottom,#FFE699 0%,#FFE699 50%,#FFD24D 51%,#FFD24D 100%);
+}
+
+/* 招聘信息 */
+.recruitment {
+    /* display: none; */
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width: 92%;
+    height: 35%;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 25px;
+    background-color: #FFD24D;
+    color: #8C6600;
+}
+.recruitment h2 {
+    color: #513A00;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+.recruitment p {
+    padding: 0.1em 0 0.1em 1em;
+}
+.button .confirm {
+    padding: 0.6em 0 0.6em 0;
+    width: 60%;
+}
+.button .refuse {
+    padding: 0.6em 0 0.6em 0;
+    width: 30%;
+}
+
+/* 解雇信息 */
+.dismiss {
+    /* display: none; */
+    position: absolute;
+    left: 3%;
+    top: 30%;
+    width: 92%;
+    height: 35%;
+    border: 0.4em solid #FFFFFF;
+    border-radius: 25px;
+    background-color: #FFD24D;
+    color: #8C6600;
+}
+.dismiss h2 {
+    color: #513A00;
+    padding: 0.5em 0 0.5em 0;
+    text-align: center;
+}
+.dismiss p {
+    padding: 0.1em 0 0.1em 2em;
+}
+
+.tip {
+    position: absolute;
+    left: 15%;
+    top: 45%;
+    width: 70%;
+    height: 10%;
+    border: 0.5em solid #FFFFFF;
+    border-radius: 25px;
+    font-size: 0.8em;
+    color: #8C6700;
+    text-align: center;
+}
+.tip p {
+    position: absolute;
+    top: 35%;
+}
+
+.finishEat{
+    display: none;
+    background-color: #D9E67D;
+}
+.finishEat p {
+    left: 4em;
+}
+
+.left {
+    display: none;
+    background-color: #FFB399;
+}
+.left p {
+    left: 3em;
+}
+
+.cooknumber {
+    display: none;
+    background-color: #D9E67D;
+}
+.cooknumber p {
+    left: 3em;
+}
+
+.nomoney {
+    display: none;
+    background-color: #FFB399;
+}
+.nomoney p {
+    left: 5em;
+}
+
+.paymoney {
+    display: none;
+    background-color: #D9E67D;
+}
+.paymoney p {
+    left: 5em;
+}
+
+.empty {
+    display: none;
+    background-color: #FFB399;
+    text-align: left;
+}
+.empty p {
+    top: 30%;
+    left: 1em;
+}

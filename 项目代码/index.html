@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="head">
+        <span class="time">
+            <span class="week">W0</span>
+            <span class="day">D0</span>
+        </span>
+        <span class="money">
+            <span>0</span>
+        </span>
+    </section>
+    <section class="bodyone">
+        <div class="cooks" id="cooks">
+            <div class="charatericon addcook" data-isRest=0>
+                <img class="iconsize-add" src="" alt="">
+                <div class="cookingdish"></div> 
+            </div>
+        </div>
+    </section>
+        
+    <section class="bodytwo">
+        <div class="customers">
+            <div class="charatericon emptytable" id=0 >
+                <img class="iconsize" src="" alt="">
+                <!-- data-index标记是第几道菜 -->
+                <div class="one foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div> 
+                <div class="one servefood" data-index=-1 id=0>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="two foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="two servefood" data-index=-1 id=1>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="thr foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="thr servefood" data-index=3 id=2>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="charge"></div>
+            </div>
+            <div class="charatericon emptytable" id=1>
+                <img class="iconsize" src="" alt="">
+                <!-- data-index标记是第几道菜 -->
+                <div class="one foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="one servefood" data-index=-1 id=3>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="two foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="two servefood" data-index=-1 id=4>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="thr foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="thr servefood" data-index=-1 id=5>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="charge"></div>
+            </div>
+            <div class="charatericon emptytable" id=2>
+                <img class="iconsize" src="" alt="">
+                <!-- data-index标记是第几道菜 -->
+                <div class="one foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="one servefood" data-index=-1 id=6>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="two foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="two servefood" data-index=-1 id=7>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="thr foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="thr servefood" data-index=-1 id=8>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="charge"></div>
+            </div>
+            <div class="charatericon emptytable" id=3>
+                <img class="iconsize" src="" alt="">
+                <!-- data-index标记是菜单上的菜的编号 -->
+                <div class="one foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="one servefood" data-index=-1 id=9>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="two foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="two servefood" data-index=-1 id=10>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="thr foodname" data-index=-1 data-isCooking='true' data-isFinish="1">
+                    <hr>
+                    <div class="color"></div>
+                    <div class="name"></div>
+                </div>
+                <div class="thr servefood" data-index=-1 id=11>
+                    <img src="image/food.png" alt="">
+                </div>
+                <div class="charge"></div>
+            </div>
+
+            
+            
+            <!-- 等待区 -->
+            <div class="waiting">
+                <div class="charatericon customer1" data-isWaiting=0 id="one">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+                <div class="charatericon customer2" data-isWaiting=0 id="two">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+                <div class="charatericon customer3" data-isWaiting=0 id="three">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+                <div class="charatericon customer4" data-isWaiting=0 id="four">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+                <div class="charatericon customer5" data-isWaiting=0 id="five">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+                <div class="charatericon customer6" data-isWaiting=0 id="six">
+                    <img class="iconsize" src="" alt="">
+                    <div class="wait">等待中</div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+    <!-- 菜单 -->
+    <div class="shadow">
+        <div class="form" > 
+            <div class="charatericon customer1">
+                <img class="iconsize" src="#" alt=""> 
+            </div>
+            <h4>customer0 正在点菜，已点 0 元的菜</h4>
+            <form class="menu" action="" onsubmit="return false">
+                <p>凉菜（二选一，可不点）</p>
+
+                <input type="checkbox" data-index = 0 name="liang"> 
+                <label for=0>凉拌SAN</label>
+                <label class="yuan tiaozheng" for=0>----------- ￥ 6</label><br>
+
+                <input type="checkbox" data-index = 1 name="liang"> 
+                <label for=1>冷切DOM</label>
+                <label class="yuan tiaozheng" for=1 >----------- ￥ 4</label><br>
+
+                <p>主菜（五选一，必点）</p>
+
+                <input type="checkbox" required="required" data-index = 2> 
+                <label for=2>UL炖LI</label>
+                <label class="yuan" for=2>----------- ￥ 12</label><br>
+
+                <input type="checkbox" required="required" data-index = 3> 
+                <label for=3>红烧HEAD</label>
+                <label class="yuan" for=3>----------- ￥ 15</label><br>
+
+                <input type="checkbox" required="required" data-index = 4> 
+                <label for=4>酥炸ECharts</label>
+                <label class="yuan" for=4>----------- ￥ 18</label><br>
+
+                <input type="checkbox" required="required" data-index = 5> 
+                <label for=5>炙烤CSS</label>
+                <label class="yuan" for=5>----------- ￥ 16</label><br>
+
+                <input type="checkbox" required="required" data-index = 6> 
+                <label for=6>清蒸DIV</label>
+                <label class="yuan" for=6>----------- ￥ 12</label><br>
+
+                <p>饮品（二选一，可不点）</p>
+
+                <input type="checkbox" data-index = 7 name="yin"> 
+                <label for=7>鲜榨flex</label>
+                <label class="yuan tiaozheng" for=7>----------- ￥ 5</label><br>
+
+                <input type="checkbox" data-index = 8 name="yin"> 
+                <label for=8>小程序奶茶</label>
+                <label class="yuan tiaozheng" for=8>----------- ￥ 6</label><br>
+
+                <input class="submit" type="submit" name="submit" value="点好了，快点上菜">
+                <button class="exit">不吃了</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 欢迎页面 -->
+    <div class="shadow">
+        <div class="welcome">
+            <h2>WebMOOC餐厅开业啦！</h2>
+            <p>WebMOOC餐厅即将开业，请认真经营你的餐厅吧！</p>
+            <p>经营餐厅需要做好下面几件事情！加油！</p>
+            <p class="shiqing">
+                <span>招聘厨师</span>
+                <span>迎接客人</span>
+                <span>烹饪美食</span>
+            </p>
+            <div class="button">
+                <button class="start">开始营业吧</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 招聘信息页面 -->
+    <div class="shadow">
+        <div class="recruitment">
+            <h2>招聘新厨师</h2>
+            <p>招聘一名新厨师可以更快地为顾客烹饪菜肴，</p>
+            <p>增加餐厅收入。你最多可拥有六名厨师。</p>
+            <p>但每个厨师每周需要你支付 ￥ 100</p>
+            <p>请问你确认新招聘一名厨师吗</p>
+            <div class="button">
+                <button class="confirm"> 是的，确认招聘</button>
+                <button class="refuse"> 先不了</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 解除雇佣页面 -->
+    <div class="shadow">
+        <div class="dismiss">
+            <h2>解雇厨师</h2>
+            <p>解雇当前闲置的厨师可以帮你节省成本。</p>
+            <p>解雇时会按厨师本周已经工作的日子结算</p>
+            <p>工资，并会赔偿一周作为违约金。</p>
+            <p>解雇当前厨师结算工资既违约金需支付 ￥ </p>
+            <div class="button">
+                <button class="confirm"> 是的，确认解雇</button>
+                <button class="refuse"> 先不了</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 完成用餐提示 -->
+    <div class="tip finishEat">
+        <p>cumtomer0 完成用餐，收获 ￥ </p>
+    </div>
+
+    <!-- 失望而归 -->
+    <div class="tip left">
+        <p>cumtomer0 失望而归别在让客人挨饿了 </p>
+    </div>
+
+    <!-- 招聘成功 -->
+    <div class="tip cooknumber">
+        <p>招聘厨师成功！您已经有 0 名厨师 </p>
+    </div>
+
+    <!-- 不足支付违约金 -->
+    <div class="tip nomoney">
+        <p>您的金额不足以支付违约金！</p>
+    </div>
+        
+    <!-- 解雇厨师成功 -->
+    <div class="tip paymoney">
+        <p>解雇厨师成功，解约支出 ￥ </p>
+    </div>
+
+    <!-- 餐厅有空位 -->
+    <div class="tip empty">
+        <p>餐厅目前有空位，赶紧点击等位客人头像让客人入座吧！</p>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
